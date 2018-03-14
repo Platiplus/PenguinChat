@@ -1,0 +1,9 @@
+<div class="row columns" [@moveInLeft]="state">
+    <div class="chat-container" *ngFor="let item of items | async">
+      <a href="#">{{item.name}}</a>
+      
+      <p>{{item.message}}</p>
+    </div>
+    <input type="text" id="message" *ngIf="name" placeholder="Chat here..." (keyup.enter)="chatSend($event.target.value)" [(ngModel)]="msgVal" />
+    <button class="logoutButton" (click)="logout()">Logout</button>
+  </div>
